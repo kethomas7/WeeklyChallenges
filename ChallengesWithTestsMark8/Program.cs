@@ -1,12 +1,8 @@
-﻿using System;
+﻿using ChallengesWithTestsMark8;
+using System;
 
-namespace ChallengesWithTestsMark8
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, world!");
-        }
-    }
-}
+//Console.WriteLine("Hello, world!");
+
+
+//var test = new int[] { 1, 2, 3, 4, 5 };
+//ChallengesSet02.Sum(test);

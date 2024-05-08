@@ -27,40 +27,62 @@ namespace ChallengesWithTestsMark8
 
         public bool IsNumberEven(int number)
         {
-          return number % 2 == 0? true:false ;
+            return number % 2 == 0 ? true : false;
         }
 
         public bool IsNumberOdd(int num)
         {
-            return num % 2 != 0? true : false;
+            return num % 2 != 0 ? true : false;
         }
-    
+
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
 
-        return numbers.Max()+ numbers.Min();
-         
+            return numbers.Max() + numbers.Min();
+
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
         {
-            throw new NotImplementedException();
+            if (str1.Length < str2.Length)
+            {
+                return str1.Length;
+
+            }
+            else
+            {
+                return str2.Length;
+            }
+
         }
 
-        public int Sum(int[] numbers)
+        public  int Sum(int[] numbers)
         {
-            throw new NotImplementedException();
+            var total = 0;
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = numbers[i]+ total;//total variable will not add
+            }
+          return total;
         }
 
         public int SumEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            var total = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i]%2==0)
+                {
+                    numbers[i] = numbers[i] + total;
+                }
+            }
+            return total;
         }
 
-        public bool IsSumOdd(List<int> numbers)
+        public bool IsSumOdd(List<int> numbers)//expecting list/test for array
         {
-            throw new NotImplementedException();
+            int[] Copy = numbers.ToArray();
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)

@@ -39,8 +39,13 @@ namespace ChallengesWithTestsMark8
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
 
+            if (numbers == null || numbers.Any() == false)
+            {
+                    return 0;
+ 
+            }
             return numbers.Max() + numbers.Min();
-
+       
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
@@ -57,32 +62,54 @@ namespace ChallengesWithTestsMark8
 
         }
 
-        public  int Sum(int[] numbers)
+        public int Sum(int[] numbers)
         {
-            var total = 0;
-            for(int i = 0; i < numbers.Length; i++)
+            if (numbers == null)
             {
-                numbers[i] = numbers[i]+ total;//total variable will not add
+                return 0;
             }
-          return total;
-        }
 
-        public int SumEvens(int[] numbers)
-        {
             var total = 0;
             for (int i = 0; i < numbers.Length; i++)
             {
-                if (numbers[i]%2==0)
-                {
-                    numbers[i] = numbers[i] + total;
-                }
+                total += numbers[i];
             }
             return total;
         }
 
-        public bool IsSumOdd(List<int> numbers)//expecting list/test for array
+        public int SumEvens(int[] numbers)
         {
-            int[] Copy = numbers.ToArray();
+
+            var total = 0;
+            if (numbers == null)
+            {
+                return 0;
+            }
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] % 2 == 0)
+                {
+                    total += numbers[i];
+                }
+
+            }
+            return total;
+
+        }
+
+        public bool IsSumOdd(List<int> numbers)
+        {
+
+            if (numbers == null)
+            {
+                return false;
+            }
+
+            int oddsTotal = Sum(numbers.ToArray());
+
+            return oddsTotal % 2 != 0 ? true : false;
+
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)

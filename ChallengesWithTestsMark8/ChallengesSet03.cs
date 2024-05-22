@@ -31,10 +31,23 @@ namespace ChallengesWithTestsMark8
             // charArray.ToList().ForEach(x => x.)
             for (var x = 0; x < charArray.Length - 1; x++)
             {
-                bool isDigit = char.IsDigit(charArray[x]);
-                bool isUpper = char.IsUpper(charArray[x]);
-                bool isLower = char.IsLower(charArray[x]);
-            }//goes through each 
+                if (char.IsDigit(charArray[x]))
+                {
+                    bool containsDigit;
+                    x++;
+                }
+                else if (char.IsUpper(charArray[x]))
+                {
+                    bool isUpper;
+                    x++;
+                        }
+                else if (char.IsLower(charArray[x]))
+                    {
+                    bool containsLower;
+                }
+
+                
+            }
             return true;
         }
 
@@ -51,7 +64,14 @@ namespace ChallengesWithTestsMark8
 
         public decimal Divide(decimal dividend, decimal divisor)
         {
-            throw new NotImplementedException();
+            if (divisor == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return dividend / divisor;
+            }
         }
 
         public int LastMinusFirst(int[] nums)
@@ -64,10 +84,10 @@ namespace ChallengesWithTestsMark8
 
         public int[] GetOddsBelow100()
         {
-            var odds = new int[0];
+            var odds = new int[50];
             int counter = 0;
 
-         for (var x=1; x <99; x++ )
+         for (var x=1; x <100; x++ )
             {
                 if (x % 2 != 0)
                 {
@@ -81,7 +101,15 @@ namespace ChallengesWithTestsMark8
         public void ChangeAllElementsToUppercase(string[] words)
         {
 
-            var uppercaseWords = words.Select(x => x.ToUpper().ToArray());
-        }//ask about this
+            var newArray = words.Select(x => x.ToUpper()).ToArray();
+
+          
+
+            for (var x=0; x < newArray.Length; x++ )
+            {
+                words[x] = newArray[x];
+            }
+
+        }
     }
 }

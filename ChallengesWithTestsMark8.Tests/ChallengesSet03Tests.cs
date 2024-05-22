@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using Xunit;
 
 namespace ChallengesWithTestsMark8.Tests
@@ -223,7 +224,7 @@ namespace ChallengesWithTestsMark8.Tests
 
             // Act
             challenger.ChangeAllElementsToUppercase(values);
-
+            
             // Assert
             Assert.Equal(values.Length, expected.Length);
             for (int i = 0; i < values.Length; i++)

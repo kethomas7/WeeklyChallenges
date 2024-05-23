@@ -27,28 +27,33 @@ namespace ChallengesWithTestsMark8
         public bool PasswordContainsUpperLowerAndNumber(string password)
         {
             char[] charArray = password.ToCharArray();
+ bool containsDigit = false;
+                     bool isUpper = false;
+                bool containsLower = false;
 
             // charArray.ToList().ForEach(x => x.)
-            for (var x = 0; x < charArray.Length - 1; x++)
+            foreach (var letter in password)
             {
-                if (char.IsDigit(charArray[x]))
+               
+
+                if (char.IsDigit(letter))
                 {
-                    bool containsDigit;
-                    x++;
+                    containsDigit = true;
+
                 }
-                else if (char.IsUpper(charArray[x]))
+                 if (char.IsUpper(letter))
                 {
-                    bool isUpper;
-                    x++;
-                        }
-                else if (char.IsLower(charArray[x]))
-                    {
-                    bool containsLower;
+                     isUpper= true;
+
+                }
+                if (char.IsLower(letter))
+                {
+                     containsLower=true;
                 }
 
                 
             }
-            return true;
+          return isUpper && containsDigit && containsLower;
         }
 
         public char GetFirstLetterOfString(string val)
@@ -78,16 +83,16 @@ namespace ChallengesWithTestsMark8
         {
             return nums[nums.Length - 1] - nums[0];
         }
-    
-      
-    
+
+
+
 
         public int[] GetOddsBelow100()
         {
             var odds = new int[50];
             int counter = 0;
 
-         for (var x=1; x <100; x++ )
+            for (var x = 1; x < 100; x++)
             {
                 if (x % 2 != 0)
                 {
@@ -103,9 +108,9 @@ namespace ChallengesWithTestsMark8
 
             var newArray = words.Select(x => x.ToUpper()).ToArray();
 
-          
 
-            for (var x=0; x < newArray.Length; x++ )
+
+            for (var x = 0; x < newArray.Length; x++)
             {
                 words[x] = newArray[x];
             }

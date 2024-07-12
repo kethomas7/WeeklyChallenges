@@ -31,11 +31,8 @@ namespace ChallengesWithTestsMark8
                      bool isUpper = false;
                 bool containsLower = false;
 
-            // charArray.ToList().ForEach(x => x.)
             foreach (var letter in password)
             {
-               
-
                 if (char.IsDigit(letter))
                 {
                     containsDigit = true;

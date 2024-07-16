@@ -81,7 +81,22 @@ namespace ChallengesWithTestsMark8
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
         {
-            throw new NotImplementedException();
+            int nullCounter = 0;
+            int otherCounter = 0;
+
+            foreach (var obj in objs)
+            {
+                if(obj ==null)
+                {
+                    nullCounter++;
+                }
+                else
+                {
+                    otherCounter++;
+                }
+            }
+
+            return nullCounter > otherCounter ? true : false;
         }
 
         public double AverageEvens(int[] numbers)
@@ -115,7 +130,22 @@ namespace ChallengesWithTestsMark8
 
         public int Factorial(int number)
         {
-            throw new NotImplementedException();
+            //n! = n × (n−1)!
+
+            int fact = 1;
+
+            if(number < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            for (int x = number; x > 0; x--)
+            {
+                fact *= x;
+            }
+
+            return fact;
         }
+
     }
 }

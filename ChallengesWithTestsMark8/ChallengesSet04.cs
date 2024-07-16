@@ -87,20 +87,26 @@ namespace ChallengesWithTestsMark8
         public double AverageEvens(int[] numbers)
         {
             List<double> numbersList = new List<double>();
-            
-            foreach(var numb in numbers)
-            {
-               if(numbers ==null|| numb % 2 != 0)
+
+            if( numbers == null|| !numbers.Any() )
                 {
                     return 0;
                 }
-                
-                else if (numb %2 == 0)
+
+
+            foreach(var numb in numbers)
+            {
+       
+                if (numb %2 == 0)
                 {
                     numbersList.Add(numb);     
                 }
-              
-               
+
+            }
+
+            if (!numbersList.Any())
+            {
+                return 0;
             }
             return numbersList.Average();
 

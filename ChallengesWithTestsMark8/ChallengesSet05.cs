@@ -23,18 +23,32 @@ namespace ChallengesWithTestsMark8
 
         public void ChangeNamesOfBusinessesWithNoRevenueTo_CLOSED(Business[] businesses)
         {
-            throw new NotImplementedException();
+          foreach (var business in businesses)
+            {
+               if (business.TotalRevenue ==0)
+                {
+                    business.Name = "CLOSED";
+                }
+            }
         }
 
         public bool IsAscendingOrder(int[] numbers)
         {
+            if (numbers ==null || !numbers.Any())
+            {
+                return false;
+            }
 
-            throw new NotImplementedException();
-            //int[] sorted = new int[0];
 
-            //Array.Sort(numbers);
-
-            // return numbers.SequenceEqual()
+            for (var i = 0; i < numbers.Length-1;i++)
+            {
+                if (numbers[i]> numbers[i+1])
+                {
+                    return false;
+                }
+               
+            }
+            return true;
         }
 
         public int SumElementsThatFollowAnEven(int[] numbers)
@@ -59,7 +73,7 @@ namespace ChallengesWithTestsMark8
         public string TurnWordsIntoSentence(string[] words)
         {
 
-            if (words == null ||words.Any() )
+            if (words == null || !words.Any())
             {
                 return "";
             }
@@ -67,9 +81,11 @@ namespace ChallengesWithTestsMark8
             {
                 string sentence = String.Join(" ", words.Where(word => !string.IsNullOrWhiteSpace(word)));
 
-
+             
                 return $"{sentence}.";
             }
+        
+
         }
 
         public double[] GetEveryFourthElement(List<double> elements)

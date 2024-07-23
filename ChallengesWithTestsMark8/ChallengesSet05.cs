@@ -79,7 +79,7 @@ namespace ChallengesWithTestsMark8
             }
             else 
             {
-                string sentence = String.Join(" ", words.Where(word => !string.IsNullOrWhiteSpace(word)));
+                string sentence = String.Join(" ", words.Where(word => !string.IsNullOrWhiteSpace(word.Trim())));
 
              
                 return $"{sentence}.";
@@ -90,7 +90,18 @@ namespace ChallengesWithTestsMark8
 
         public double[] GetEveryFourthElement(List<double> elements)
         {
-            throw new NotImplementedException();
+            double[] results = new double[10];
+
+
+            for (var i = 4; i < elements.Count;i++)
+            {
+
+            }
+
+            return results;
+
+
+
         }
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
